@@ -1,0 +1,21 @@
+{% extends 'app4/base.html' %}
+{% block content %}
+    <h1>Login Page</h1>
+    <form action="{% url 'app4:login' %}" method="POST">
+        {% csrf_token %}
+        <label for="username">Emailid:</label>
+        <input type="text" name="username" placeholder="username here"><br>
+        <label for="password">Accountid:</label>
+        <input type="password" name="password"><br>
+        <label for="password">Accountname:</label>
+        <input type="password" name="password"><br>
+        <label for="password">WebSiteName:</label>
+        <input type="password" name="password"><br>
+        <input type="submit" value="Login">
+        {% for message in messages %}
+        <p>{{message}}</p>
+        {% endfor %}
+
+    </form>
+
+{% endblock %}
